@@ -215,8 +215,10 @@ namespace VimAddin
 					
 				int line;
 				if (int.TryParse (command.Substring (1), out line)) {
-					if (line < DocumentLocation.MinLine || line > Data.Document.LineCount) {
-						return "Invalid line number.";
+					if (line < DocumentLocation.MinLine) {
+						line = DocumentLocation.MinLine;
+					} else if (line > Data.Document.LineCount) {
+						line = Data.Document.LineCount;
 					} else if (line == 0) {
 						RunAction (CaretMoveActions.ToDocumentStart);
 						return "Jumped to beginning of document.";
