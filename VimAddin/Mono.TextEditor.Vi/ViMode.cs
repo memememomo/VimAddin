@@ -732,7 +732,7 @@ namespace VimAddin
 				numericPrefix += (char)unicodeKey;
 				return;
 			}
-			
+
 			switch (CurState) {
 			case State.Unknown:
 				Reset (string.Empty);
@@ -1220,6 +1220,8 @@ namespace VimAddin
 					return;
 				case 'P':
 					PasteBefore (false);
+					return;
+				case 'v':
 					return;
 				}
 				action = GetNavCharAction ((char)unicodeKey, false);
