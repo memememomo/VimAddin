@@ -31,65 +31,45 @@
     <Reference Include="System" />
     <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>glib-sharp-2.0</Package>
     </Reference>
     <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>glade-sharp-2.0</Package>
     </Reference>
     <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
     </Reference>
     <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
-      <Package>gtk-sharp-2.0</Package>
-    </Reference>
-    <Reference Include="Mono.Addins">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/Mono.Addins.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/bin/Mono.Addins.dll</HintPath>
-      <Package>mono-addins</Package>
-    </Reference>
-    <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/ICSharpCode.NRefactory.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/bin/ICSharpCode.NRefactory.dll</HintPath>
-      <Package>monodevelop</Package>
-    </Reference>
-    <Reference Include="Mono.TextEditor">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/Mono.TextEditor.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/bin/Mono.TextEditor.dll</HintPath>
-      <Package>monodevelop</Package>
-    </Reference>
-    <Reference Include="MonoDevelop.Core">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/MonoDevelop.Core.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/bin/MonoDevelop.Core.dll</HintPath>
-      <Package>monodevelop</Package>
-    </Reference>
-    <Reference Include="MonoDevelop.DesignerSupport">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/AddIns/MonoDevelop.DesignerSupport/MonoDevelop.DesignerSupport.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/AddIns/MonoDevelop.DesignerSupport/MonoDevelop.DesignerSupport.dll</HintPath>
-      <Package>monodevelop-core-addins</Package>
-    </Reference>
-    <Reference Include="MonoDevelop.Ide">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/bin/MonoDevelop.Ide.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/bin/MonoDevelop.Ide.dll</HintPath>
-      <Package>monodevelop</Package>
-    </Reference>
-    <Reference Include="MonoDevelop.SourceEditor2">
-      <HintPath>/Applications/Xamarin Studio.app/Contents/MacOS/lib/monodevelop/AddIns/DisplayBindings/SourceEditor/MonoDevelop.SourceEditor2.dll</HintPath>
-      <HintPath>../../monodevelop/main/build/AddIns/DisplayBindings/SourceEditor/MonoDevelop.SourceEditor2.dll</HintPath>
-      <Package>monodevelop-core-addins</Package>
     </Reference>
     <Reference Include="Mono.Posix" />
     <Reference Include="Mono.Cairo" />
+    <Reference Include="MonoDevelop.Ide">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\bin\MonoDevelop.Ide.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.Core">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\bin\MonoDevelop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.DesignerSupport">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\AddIns\MonoDevelop.DesignerSupport\MonoDevelop.DesignerSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.TextEditor">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\bin\Mono.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.SourceEditor2">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\AddIns\DisplayBindings\SourceEditor\MonoDevelop.SourceEditor2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\bin\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\..\..\Projects\monodevelop\main\build\bin\Mono.Addins.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -122,4 +102,8 @@
     <Compile Include="gtk-gui\VimAddin.VimAddinOptionsPanelWidget.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MonoDevelop.Addins.0.2.3\build\net40\MonoDevelop.Addins.targets" Condition="Exists('..\packages\MonoDevelop.Addins.0.2.3\build\net40\MonoDevelop.Addins.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>

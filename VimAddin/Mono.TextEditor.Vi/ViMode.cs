@@ -1222,6 +1222,7 @@ namespace VimAddin
 					PasteBefore (false);
 					return;
 				case 'v':
+					Reset (string.Empty);
 					return;
 				}
 				action = GetNavCharAction ((char)unicodeKey, false);

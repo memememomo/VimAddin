@@ -1,2 +1,7 @@
 *.userprefs
 VimAddin/bin
+.DS_Store
+VimAddin/obj/
+VimAddin/packages.config
+packages/
+*.mpack
